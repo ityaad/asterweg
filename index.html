@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asterweg - Under Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #2d1b4e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #e2e8f0;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 1.5px;
+            height: 1.5px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            max-width: 700px;
+            padding: 60px 40px;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(248, 113, 113, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(248, 113, 113, 0.4));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-25px); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f8d7da 0%, #f5a9b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: rgba(226, 232, 240, 0.8);
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out 0.2s both;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .construction-icon {
+            font-size: 5.5rem;
+            margin: 30px 0;
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.3));
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(226, 232, 240, 0.75);
+            margin-bottom: 50px;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 14px 36px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5a9b8 100%);
+            color: #0f172a;
+            box-shadow: 0 4px 15px rgba(248, 113, 113, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(248, 113, 113, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(248, 113, 113, 0.1);
+            color: #f8d7da;
+            border: 1.5px solid rgba(248, 113, 113, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(248, 113, 113, 0.2);
+            border-color: rgba(248, 113, 113, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(248, 113, 113, 0.2);
+        }
+
+        .social-links {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(248, 113, 113, 0.2);
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .social-links p {
+            color: rgba(226, 232, 240, 0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(248, 113, 113, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f8d7da;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+        }
+
+        .social-icon:hover {
+            background: rgba(248, 113, 113, 0.25);
+            transform: translateY(-6px);
+            border-color: rgba(248, 113, 113, 0.5);
+            box-shadow: 0 10px 20px rgba(248, 113, 113, 0.15);
+        }
+
+        .progress-bar {
+            margin-top: 50px;
+            background: rgba(248, 113, 113, 0.1);
+            height: 6px;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            animation: fadeIn 1s ease-out 0.35s both;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f8d7da 0%, #fbbf24 100%);
+            animation: loading 2.5s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .logo {
+                font-size: 4rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .construction-icon {
+                font-size: 4.5rem;
+            }
+
+            .message {
+                font-size: 0.95rem;
+            }
+
+            .btn {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+            }
+
+            .social-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>asterweg.com</h1>
+        <p class="subtitle">Under Construction</p>
+        
+        <div class="construction-icon">🔨</div>
+
+        <p class="message">
+            We're working hard to bring something amazing to you. 
+            <br><br>
+            Check back soon for updates!
+        </p>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="cta-section">
+            <a href="#" class="btn btn-secondary">Learn More</a>
+        </div>
+
+        <div class="social-links">
+            <p>Follow us for updates</p>
+            <div class="social-icons">
+                <a href="https://twitter.com" class="social-icon" title="Twitter" target="_blank">𝕏</a>
+                <a href="https://github.com" class="social-icon" title="GitHub" target="_blank">⚙</a>
+                <a href="https://linkedin.com" class="social-icon" title="LinkedIn" target="_blank">in</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate random stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

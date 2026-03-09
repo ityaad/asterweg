@@ -1,16 +1,15 @@
 # Asterweg - Under Construction
 
-This is the GitHub Pages site for **www.asterweg.com**, currently showcasing an under-construction landing page.
+This is the GitHub Pages site for **www.asterweg.com**, a clean and minimalist under-construction landing page.
 
 ## Features
 
-- 🎨 Modern glassmorphism design with sophisticated dark theme
-- 💫 Twinkling star background animation
+- 🎨 Clean, minimalist design with white background
 - 📱 Fully responsive design (mobile-friendly)
-- ✨ Smooth staggered animations and transitions
-- 🎯 Call-to-action button (Learn More)
+- 📊 Subtle animated progress bar
+- 🎯 Simple call-to-action button (Learn More)
 - 🔗 Social media links section
-- 🔤 Plus Jakarta Sans geometric typography
+- 🔤 Plus Jakarta Sans typography
 
 ## Deployment
 
@@ -46,13 +45,20 @@ Modify the social media links in the social-icons section:
 ```
 
 ### Change Colors
-Edit the gradient background and accent colors in the CSS:
+Edit the background and accent colors in the CSS:
 ```css
-background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #2d1b4e 100%);
+body {
+    background: #ffffff;  /* Main background */
+    color: #1a1a1a;       /* Text color */
+}
+
+.btn-secondary {
+    border: 1px solid #1a1a1a;  /* Button border */
+}
 ```
 
 ### Modify Typography
-The site uses [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) from Google Fonts for a modern, geometric look. To change the font, update the Google Fonts import and font-family declarations in `index.html`.
+The site uses [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) from Google Fonts. To change the font, update the Google Fonts import and font-family declarations in `index.html`.
 
 ## Local Testing
 

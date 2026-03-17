@@ -30,10 +30,7 @@ www.asterweg.com CNAME <your-github-username>.github.io
 ```
 ├── index.html           # Main landing page
 ├── CNAME               # Custom domain configuration
-├── README.md           # This file
-└── .github/
-    └── workflows/
-        └── deploy.yml  # GitHub Actions deployment workflow
+└── README.md           # This file
 ```
 
 ## Customization
